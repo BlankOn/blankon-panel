@@ -3,8 +3,10 @@ Section: desktop
 Priority: extra
 Maintainer: BlankOn Developers <BlankOn-dev@googlegroups.com>
 Build-Depends: debhelper (>= 7.0.50), libcairo2-dev, libgee-dev, libgtk-3-dev, libgnome-menu-dev, libwnck-3-dev, libvala-0.12-dev, valac
+Uploader: Rahman Yusri Aftian <aftian@di.blankon.in>
 Standards-Version: 3.9.1
-
+Website: https://github.com/mdamt/blankon-panel
+VCS-git: git://github.com/mdamt/blankon-panel.git
 
 Package: blankon-panel
 Architecture: any
