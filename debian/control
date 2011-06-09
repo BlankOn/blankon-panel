@@ -10,8 +10,7 @@ VCS-git: git://github.com/mdamt/blankon-panel.git
 
 Package: blankon-panel
 Architecture: any
-Depends: ${misc:Depends}, gdk-x11-3.0, gir1.0-gee-1.0, cairo, libcairo2, gtk+3.0, gio-unix-2.0, libgnome-menu2, gdk-3.0, libwnck-3.0, valac
-Recommends: 
+Depends: ${misc:Depends}
 Description: BlankOn Panel
  BlankOn Panel
 
