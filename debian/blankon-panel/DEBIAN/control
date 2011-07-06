@@ -1,0 +1,10 @@
+Package: blankon-panel
+Version: 0.0.0.0.1
+Architecture: i386
+Maintainer: BlankOn Developers <BlankOn-dev@googlegroups.com>
+Installed-Size: 80
+Depends: gdk-x11-3.0, gir1.0-gee-1.0, cairo, libcairo2, gtk+3.0, gio-unix-2.0, libgnome-menu2, gdk-3.0, libwnck-3.0, valac
+Section: desktop
+Priority: extra
+Description: BlankOn Panel
+ BlankOn Panel
