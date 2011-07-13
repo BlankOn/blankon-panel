@@ -17,6 +17,10 @@ blankon_paneldoc_DATA = \
 	NEWS\
 	$(NULL)
 
+
+blankon_paneldir = ${prefix}/share/applications
+blankon_panel_DATA = blankon-panel.desktop
+
 EXTRA_DIST = \
 	$(blankon_paneldoc_DATA) \
 	intltool-extract.in \
