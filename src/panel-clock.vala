@@ -21,7 +21,7 @@ public class PanelClock : Label {
 	public override bool draw (Cairo.Context cr) {
         StyleContext style = get_style_context ();
         style.set_state (get_state_flags ());
-        Gtk.render_background (style, cr, MARGIN, 0, event_box.get_allocated_width (), get_allocated_height ()); 
+        Gtk.render_background (style, cr, 0, 0, get_allocated_width (), get_allocated_height ()); 
         base.draw (cr);
         return true;
     }
