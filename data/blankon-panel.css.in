@@ -9,6 +9,9 @@
 
 @define-color clock_fg_color #eeeeee; 
 
+@define-color hover_gradient_color_a #0044AA;
+@define-color hover_gradient_color_b #0063F8;
+
 
 PanelWindowHost
 {
@@ -52,7 +55,13 @@ PanelItem {
 
 PanelItem:prelight {
     color: #ffffff;
-    background-color: #0044AA; 
+    background-image: -gtk-gradient (linear,
+                    left top,
+                    left bottom,
+                    from (@hover_gradient_color_a),
+			  color-stop (0.35, @hover_gradient_color_a),
+			  color-stop (0.68, @hover_gradient_color_b),
+                    to (@hover_gradient_color_b)); 
 }
 
 PanelWindowPager,
@@ -72,7 +81,13 @@ PanelWindowEntry:active {
 }
 
 PanelWindowEntry:prelight {
-    background-color: #0044AA; 
+    background-image: -gtk-gradient (linear,
+                    left top,
+                    left bottom,
+                    from (@hover_gradient_color_a),
+			  color-stop (0.35, @hover_gradient_color_a),
+			  color-stop (0.68, @hover_gradient_color_b),
+                    to (@hover_gradient_color_b)); 
     color: #ffffff; 
 }
 
