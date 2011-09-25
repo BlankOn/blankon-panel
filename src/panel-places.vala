@@ -68,12 +68,26 @@ public class PanelPlaces : PanelMenuContent {
         insert_separator ();
         for (int i = UserDirectory.DESKTOP; i < UserDirectory.N_DIRECTORIES; i ++) {
             var path = Environment.get_user_special_dir ((UserDirectory) i);
-            if (path == null)
+            if (path == null || path == Environment.get_home_dir())
                 continue;
 
             var dir = new PanelItem.with_label (Filename.display_basename(path));
             if (i == (int) UserDirectory.DESKTOP)
                 dir.set_image ("desktop");
+            else if (i == (int) UserDirectory.DOCUMENTS)
+                dir.set_image ("folder-documents");
+            else if (i == (int) UserDirectory.DOWNLOAD)
+                dir.set_image ("folder-download");
+            else if (i == (int) UserDirectory.MUSIC)
+                dir.set_image ("folder-music");
+            else if (i == (int) UserDirectory.PICTURES)
+                dir.set_image ("folder-pictures");
+            else if (i == (int) UserDirectory.PUBLIC_SHARE)
+                dir.set_image ("folder-publicshare");
+            else if (i == (int) UserDirectory.TEMPLATES)
+                dir.set_image ("folder-templates");
+            else if (i == (int) UserDirectory.VIDEOS)
+                dir.set_image ("folder-videos");
             else
                 dir.set_image ("gtk-directory");
             pack_start (dir, false, false, 0);
