@@ -15,7 +15,7 @@ int main (string[] args) {
     var app = new Unique.App ("id.or.blankonlinux.Panel", null);
     if (app.is_running ()) {
         stdout.printf ("BlankOn Panel is already running.\n");
-        return 0;    
+        return 0;
     }
 
 
@@ -23,9 +23,9 @@ int main (string[] args) {
     m.show_all();
 
     try {
-        XDGDBus session =  Bus.get_proxy_sync (BusType.SESSION, 
+        XDGDBus session =  Bus.get_proxy_sync (BusType.SESSION,
             "org.freedesktop.DBus", "/org/freedesktop/DBus");
-        var r = session.request_name ("org.gnome.Panel", 
+        var r = session.request_name ("org.gnome.Panel",
             BusNameOwnerFlags.ALLOW_REPLACEMENT | BusNameOwnerFlags.REPLACE);
 
         if (r != 1 || // DBus.RequestNameReply.PRIMARY_OWNER

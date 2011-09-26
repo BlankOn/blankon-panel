@@ -23,7 +23,7 @@ public class PanelButtonWindow : PanelAbstractWindow {
         c.alpha = 0.0;
         override_background_color(StateFlags.NORMAL, c);
         set_app_paintable(true);
-        
+
         image = new Image.from_icon_name("distributor-logo", IconSize.LARGE_TOOLBAR);
         add (image);
 
@@ -61,7 +61,7 @@ public class PanelButtonWindow : PanelAbstractWindow {
                     && w.no_windows_around ()) {
                     return false;
                 }
-                
+
                 // If it's showing second column, just go back to 
                 // first column
                 if (menu_box.get_active_column () == 1) {

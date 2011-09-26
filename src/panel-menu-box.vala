@@ -42,7 +42,7 @@ public class PanelMenuBox : PanelAbstractWindow {
         active_column = 1;
         sliding_right ();
     }
-    
+
     private void show_content_widget () {
         if (content_widget != null)
             content_widget.show_all ();
@@ -315,7 +315,7 @@ public class PanelMenuBox : PanelAbstractWindow {
             PanelScreen.move_window (this, Gdk.Gravity.NORTH_WEST);
             queue_resize ();
         });
-        
+
         // Hide all contents when activating a content
         about_to_show_content.connect (() => {
             all_apps.hide ();
