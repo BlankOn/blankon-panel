@@ -1,7 +1,7 @@
 using Gtk;
 
 public class PanelClock : Label {
-	
+
     private const int MARGIN = 20;
     private Pango.Layout pango;
 
@@ -11,7 +11,7 @@ public class PanelClock : Label {
 		Timeout.add (1000 * 30, update);
         update ();
 	}
-	
+
 	private bool update () {
 		char bufferClock[20];
 		char bufferDate[50];
@@ -29,7 +29,7 @@ public class PanelClock : Label {
         queue_draw ();
 		return true;
 	}
-	
+
 	public override bool draw (Cairo.Context cr) {
         StyleContext style = get_style_context ();
         style.set_state (get_state_flags ());
@@ -39,7 +39,7 @@ public class PanelClock : Label {
         Gtk.render_layout (style, cr, 10, 10, pango);
         return true;
     }
-	
+
 }
 
 public class ClockWindow : PanelAbstractWindow {

@@ -66,16 +66,19 @@ public class PanelPlaces : PanelMenuContent {
 
     private void setup_special_dirs () {
         insert_separator ();
+        string[] folder_names = {
+            "desktop", "folder-documents", "folder-download", "folder-music",
+            "folder-pictures", "folder-publicshare", "folder-templates", "folder-videos"};
+
         for (int i = UserDirectory.DESKTOP; i < UserDirectory.N_DIRECTORIES; i ++) {
             var path = Environment.get_user_special_dir ((UserDirectory) i);
-            if (path == null)
+            if (path == null || path == Environment.get_home_dir())
                 continue;
 
             var dir = new PanelItem.with_label (Filename.display_basename(path));
-            if (i == (int) UserDirectory.DESKTOP)
-                dir.set_image ("desktop");
-            else
-                dir.set_image ("gtk-directory");
+
+            dir.set_image(folder_names[i]);
+
             pack_start (dir, false, false, 0);
 
             dir.activate.connect (() => {
