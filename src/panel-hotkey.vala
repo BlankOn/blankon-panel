@@ -49,7 +49,7 @@ public class PanelHotkey {
         _instance = this;
         bindings = new Gee.ArrayList<KeyBinding> ();
         root_window = get_default_root_window ();
-        display = x11_get_default_xdisplay ();
+        display = unowned x11_get_default_xdisplay ();
         x_id = X11Window.get_xid (root_window); 
         root_window.add_filter (event_filter);
 
