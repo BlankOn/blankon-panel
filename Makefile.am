@@ -3,6 +3,7 @@ NULL =
 #Build in these directories:
 
 SUBDIRS = \
+	system \
 	data \
 	src \
 	po \
