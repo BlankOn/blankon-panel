@@ -340,8 +340,11 @@ var menu = (function() {
                 div.append(group);
                 for (var i = 0; i < entry.children.length; i ++) {
                     var desktop = entry.children[i].desktop;
-                    var name = entry.children[i].name;
-                    var uri = entry.children[i].uri;
+                    var tooltip = entry.children[i].name;
+		    /* FIXME: maximum len must be put in the higher level */
+                    int maxstr = 29;
+		    var name = (tooltip.length > maxstr) ? (tooltip.substring(0, maxstr - 4) + " ...") : tooltip;
+		    var uri = entry.children[i].uri;
                     var command = entry.children[i].command;
                     var a   = $("<a/>", {
                                     "id" : "desktop_" + this.element.replace("#", "") + "_"+ i,
@@ -362,7 +365,7 @@ var menu = (function() {
                     var span = $("<span/>", {
                                     "translate": "no",
                                     "text": name,
-                                    "title": name
+                                    "title": tooltip
                                 });
                     a.append(img);
                     a.append(span);
